@@ -1,65 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Portfolio | Welcome</title>
+    <title>หน้าแรก | Corporate Excellence</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    
-    <nav class="glass-nav">
-        <div class="logo">MyBrand.</div>
+    <nav class="navbar">
+        <a href="index.html" class="logo">CORP<span>.</span></a>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact" class="btn-primary">Contact</a></li>
+            <li><a href="index.html" class="active">หน้าแรก</a></li>
+            <li><a href="about.html">เกี่ยวกับเรา</a></li>
+            <li><a href="services.html">บริการ</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
         </ul>
     </nav>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content fade-in">
-                <p class="subtitle">Welcome to the future of design</p>
-                <h1>Elevate Your Digital <span class="gradient-text">Experience</span></h1>
-                <p class="description">We craft beautiful, modern, and intuitive web experiences that leave a lasting impression. Let's build something amazing together.</p>
-                <div class="cta-group">
-                    <a href="#projects" class="btn-primary lg">View Work</a>
-                    <a href="#about" class="btn-secondary lg">Learn More</a>
-                </div>
+    <header class="hero">
+        <div class="hero-content reveal">
+            <h1 class="serif">ยกระดับธุรกิจของคุณ<br>สู่ความสำเร็จระดับสากล</h1>
+            <p>ให้บริการคำปรึกษาและโซลูชันทางธุรกิจที่ได้มาตรฐานสากล ด้วยประสบการณ์และความเชี่ยวชาญจากทีมงานมืออาชีพ</p>
+            <a href="services.html" class="btn btn-primary">ดูบริการของเรา</a>
+            <a href="contact.html" class="btn btn-outline">ปรึกษาผู้เชี่ยวชาญ</a>
+        </div>
+        <div class="hero-bg"></div>
+    </header>
+
+    <section class="features">
+        <h2 class="section-title reveal serif">ทำไมต้องเลือกเรา</h2>
+        <div class="grid-3">
+            <div class="card reveal" style="transition-delay: 0.1s">
+                <i class="fas fa-chart-line card-icon"></i>
+                <h3>วิสัยทัศน์ก้าวไกล</h3>
+                <p>วางแผนกลยุทธ์ที่ตอบโจทย์อนาคตและสร้างการเติบโตอย่างยั่งยืน</p>
             </div>
-            <div class="hero-visual fade-in">
-                <div class="glass-card main-card">
-                    <div class="card-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                    </div>
-                    <div class="card-body">
-                        <div class="code-line w-80"></div>
-                        <div class="code-line w-60"></div>
-                        <div class="code-line w-90"></div>
-                        <div class="code-line w-40"></div>
-                    </div>
-                </div>
-                <div class="glass-card small-card floating-1">
-                    <h3>Performance</h3>
-                    <p>99.9%</p>
-                </div>
-                <div class="glass-card small-card floating-2">
-                    <h3>Design</h3>
-                    <p>Pixel Perfect</p>
-                </div>
+            <div class="card reveal" style="transition-delay: 0.2s">
+                <i class="fas fa-shield-alt card-icon"></i>
+                <h3>ความน่าเชื่อถือ</h3>
+                <p>มาตรฐานการทำงานระดับสากล โปร่งใส และตรวจสอบได้</p>
             </div>
-        </section>
-    </main>
+            <div class="card reveal" style="transition-delay: 0.3s">
+                <i class="fas fa-users card-icon"></i>
+                <h3>ทีมงานมืออาชีพ</h3>
+                <p>บุคลากรผู้เชี่ยวชาญเฉพาะด้านที่พร้อมดูแลคุณในทุกขั้นตอน</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Corporate Excellence. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>

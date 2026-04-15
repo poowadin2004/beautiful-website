@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อเรา | Corporate Excellence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">CORP<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="about.html">เกี่ยวกับเรา</a></li>
+            <li><a href="services.html">บริการ</a></li>
+            <li><a href="contact.html" class="active">ติดต่อเรา</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="reveal serif">ติดต่อเพื่อรับคำปรึกษา</h1>
+        <p class="reveal">ทีมงานของเราพร้อมให้บริการและตอบทุกข้อสงสัยของคุณ โปรดกรอกข้อมูลเพื่อให้เราติดต่อกลับ</p>
+    </header>
+
+    <section class="contact-section">
+        <div class="split-layout">
+            <div class="contact-info reveal">
+                <h2 class="serif">สำนักงานใหญ่</h2>
+                <br>
+                <p><i class="fas fa-map-marker-alt" style="color: var(--accent); width: 25px;"></i> 123 อาคารสาทรทาวเวอร์ ชั้น 45 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ถนนสาทรใต้ กรุงเทพฯ 10120</p>
+                <br>
+                <p><i class="fas fa-phone" style="color: var(--accent); width: 25px;"></i> 02-123-4567 เบอร์ส่วนกลาง</p>
+                <br>
+                <p><i class="fas fa-envelope" style="color: var(--accent); width: 25px;"></i> contact@corp-excellence.com</p>
+                <br>
+                <p><i class="fas fa-clock" style="color: var(--accent); width: 25px;"></i> เวลาทำการ: จันทร์ - ศุกร์ | 09:00 - 18:00</p>
+            </div>
+            <form class="contact-form reveal" style="transition-delay: 0.2s" onsubmit="event.preventDefault(); alert('ส่งข้อความสำเร็จ ขอบคุณที่ติดต่อเรา ทีมงานจะรีบตอบกลับครับ');">
+                <div class="form-group">
+                    <label>ชื่อ - นามสกุล</label>
+                    <input type="text" placeholder="ระบุชื่อจริงหรือชื่อหน่วยงาน..." required>
+                </div>
+                <div class="form-group">
+                    <label>อีเมลติดต่อ</label>
+                    <input type="email" placeholder="example@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>ข้อความสอบถาม</label>
+                    <textarea rows="5" placeholder="ระบุรายละเอียดที่ต้องการรับคำปรึกษา..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">ส่งข้อความ</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Corporate Excellence. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

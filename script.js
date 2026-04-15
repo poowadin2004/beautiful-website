@@ -1,35 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Add animation to elements when they become visible
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+    // 1. Page transition effect (Fade in)
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 100);
+
+    // 2. Scroll Reveal Animation for interactive feeling
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 100; // Trigger threshold
+
+        reveals.forEach((reveal) => {
+            const elementTop = reveal.getBoundingClientRect().top;
+            if (elementTop < windowHeight - elementVisible) {
+                reveal.classList.add('active');
             }
         });
-    }, {
-        threshold: 0.1
+    };
+
+    // Attach scroll listener and trigger once on load
+    window.addEventListener('scroll', revealOnScroll);
+    setTimeout(revealOnScroll, 150); // delay ensures CSS is fully parsed
+
+    // 3. Navbar scroll effect (shrinks and adds shadow when scrolled)
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) {
+            navbar.style.padding = '0.8rem 8%';
+            navbar.style.boxShadow = '0 10px 30px -10px rgba(0, 0, 0, 0.1)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+        } else {
+            navbar.style.padding = '1.2rem 8%';
+            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.05)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        }
     });
 
-    // Select all elements with fade-in class
-    document.querySelectorAll('.fade-in').forEach((el, index) => {
-        // Stagger the animation slightly for each element
-        setTimeout(() => {
-            observer.observe(el);
-            // Fallback: add visible class immediately if IntersectionObserver fails or misses
-            el.classList.add('visible');
-        }, index * 200);
-    });
-
-    // Mouse movement effect on glass cards
-    document.addEventListener('mousemove', (e) => {
-        const cards = document.querySelectorAll('.glass-card');
-        const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
-        const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
-
-        cards.forEach(card => {
-            if(!card.classList.contains('floating-1') && !card.classList.contains('floating-2')) {
-               card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-            }
-        });
+    // 4. Highlight active link in nav based on current URL
+    let activePage = window.location.pathname.split("/").pop();
+    if(activePage === "" || activePage === "index.html") {
+        activePage = "index.html"; 
+    }
+    
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.classList.remove('active'); // reset all
+        if (link.getAttribute('href') === activePage) {
+            link.classList.add('active');
+        }
     });
 });
